@@ -74,6 +74,54 @@ ul li a:hover, ul li .active {
     color: var(--secondary-color);
 }
 
+/* ===== HAMBURGER MENU ===== */
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 85px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+.mobile-nav li {
+    text-align: center;
+    padding: 1rem;
+}
+
+.mobile-nav li a {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+.mobile-nav li a:hover {
+    background-color: var(--extra-light);
+}
+
+/* Show mobile nav when checkbox is checked */
+#menu-toggle:checked ~ .mobile-nav {
+    display: flex;
+}
+
 /* ===== CONTACT SECTION ===== */
 .contact-section {
     min-height: 100vh;
@@ -158,6 +206,14 @@ textarea {
 
 /* ===== RESPONSIVENESS ===== */
 @media (max-width: 750px) {
+    .menu-icon {
+        display: block;
+    }
+
+    ul {
+        display: none;
+    }
+
     .contact-section {
         padding: 12rem 1rem 3rem;
     }
